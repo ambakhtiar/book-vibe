@@ -8,6 +8,7 @@ import Book from '../Book/Book';
 const ListedBooks = () => {
     const [readList, setReadList] = useState([]);
     const [wishList, setWishList] = useState([]);
+    const [sortType, setSortType] = useState("");
 
     const allBooks = useLoaderData();
 
@@ -30,9 +31,45 @@ const ListedBooks = () => {
 
     }, [])
 
+    const handleSort = (type) => {
+        setSortType(type);
+        if (type === "Rating") {
+            const sortedReadList = [...readList].sort((a, b) => a.rating - b.rating);
+            setReadList(sortedReadList);
+
+            const sortedWishList = [...wishList].sort((a, b) => a.rating - b.rating);
+            setWishList(sortedWishList);
+        } else if (type === "No of Pages") {
+            const sortedReadList = [...readList].sort((a, b) => a.totalPages - b.totalPages);
+            setReadList(sortedReadList);
+
+            const sortedWishList = [...wishList].sort((a, b) => a.totalPages - b.totalPages);
+            setWishList(sortedWishList);
+        } else {
+            const sortedReadList = [...readList].sort((a, b) => a.yearOfPublishing - b.yearOfPublishing);
+            setReadList(sortedReadList);
+
+            const sortedWishList = [...wishList].sort((a, b) => a.yearOfPublishing - b.yearOfPublishing);
+            setWishList(sortedWishList)
+        }
+    }
+
     return (
         <div>
             <h2 className="text-5xl my-8">Listed Books</h2>
+
+            <div className="dropdown">
+                <div tabIndex={0} role="button" className="btn m-1">
+                    {
+                        (sortType ? `Sort by ${sortType}` : "Sort by")
+                    }
+                </div>
+                <ul tabIndex={0} className="dropdown-content menu bg-base-100 rounded-box z-[1] w-52 p-2 shadow">
+                    <li onClick={() => handleSort("Rating")}><a>Rating</a></li>
+                    <li onClick={() => handleSort("No of Pages")}><a>No of Pages</a></li>
+                    <li onClick={() => handleSort("Published Year")}><a>Published Year</a></li>
+                </ul>
+            </div>
 
             <Tabs>
                 <TabList>
@@ -48,7 +85,6 @@ const ListedBooks = () => {
                         }
                     </div>
                 </TabPanel>
-
                 <TabPanel>
                     <h className="text-2xl font-bold">Read want to Books : {wishList.length}</h>
                     <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6'>

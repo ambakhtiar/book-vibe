@@ -1,7 +1,7 @@
 
 const Footer = () => {
     return (
-        <footer className="md:flex justify-between footer bg-base-300 text-base-content p-10">
+        <footer className="md:flex justify-between footer bg-base-300 text-base-content p-10 mt-20">
             <nav>
                 <h6 className="footer-title">Services</h6>
                 <a className="link link-hover">Branding</a>

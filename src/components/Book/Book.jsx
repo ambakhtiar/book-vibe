@@ -25,13 +25,16 @@ const Book = ({ book }) => {
                     <p>by: {author}</p>
                     <div className='border-t-2 border-dotted'></div>
                     <div className="card-actions justify-between">
-                        <div className="">{totalPages} Pages</div>
+                        <div className="badge badge-outline">{category}</div>
                         <div className="flex items-center">
                             <span className="font-semibold">{rating}</span>
                             <FaStar className="text-yellow-300 ml-2"></FaStar>
                         </div>
                     </div>
-                    <div className="badge badge-outline">{category}</div>
+                    <div className="card-actions justify-between">
+                        <div className="">Pages No. : {totalPages}</div>
+                        <div className="">Published : {yearOfPublishing}</div>
+                    </div>
                 </div>
             </div>
         </Link>
