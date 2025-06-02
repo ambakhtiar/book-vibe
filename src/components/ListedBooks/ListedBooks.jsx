@@ -78,7 +78,7 @@ const ListedBooks = () => {
                 </TabList>
 
                 <TabPanel>
-                    <h className="text-2xl font-bold">Books Read : {readList.length}</h>
+                    <h2 className="text-2xl font-bold">Books Read : {readList.length}</h2>
                     <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6'>
                         {
                             readList.map(book => <Book key={book.bookId} book={book}></Book>)

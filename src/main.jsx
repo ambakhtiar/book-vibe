@@ -8,10 +8,10 @@ import {
 import Root from './components/Root/Root';
 import ErrorPage from './components/ErrorPage/ErrorPage';
 import Home from './components/Home/Home';
-import Dashboard from './components/Dashboard/Dashboard';
 import BookDetail from './components/BookDetail/BookDetail';
 import ListedBooks from './components/ListedBooks/ListedBooks';
 import { ToastContainer, Zoom } from 'react-toastify';
+import Statistic from './components/Statistic/Statistic';
 
 const router = createBrowserRouter([
     {
@@ -35,8 +35,9 @@ const router = createBrowserRouter([
                 loader: () => fetch("booksData.json")
             },
             {
-                path: "dashboard",
-                element: <Dashboard></Dashboard>
+                path: "statistic",
+                element: <Statistic></Statistic>,
+                loader: () => fetch("booksData.json")
             }
         ]
     },

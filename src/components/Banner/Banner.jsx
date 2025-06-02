@@ -9,11 +9,8 @@ const Banner = () => {
                     className="max-w-sm rounded-lg shadow-2xl" />
                 <div>
                     <h1 className="text-5xl font-bold w-3/4">Books to freshen up your bookshelf</h1>
-                    <p className="py-6">
-                        Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda excepturi exercitationem
-                        quasi.
-                    </p>
-                    <button className="btn btn-primary">Get Started</button>
+                    <p className="py-6">Unfold new narratives. Summon fresh characters to your quest, turning pages to deeper lore and untold adventures. Your grand story broadens with every addition.</p>
+                    <button className="btn btn-primary">View The List</button>
                 </div>
             </div>
         </div>
