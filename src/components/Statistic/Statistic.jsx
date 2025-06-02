@@ -29,11 +29,6 @@ const Statistic = () => {
         return <path d={getPath(x, y, width, height)} stroke="none" fill={fill} />;
     };
 
-    data.forEach(book => {
-        console.log(book.bookName, book.totalPages);
-    })
-    console.log(data.length)
-
     return (
         <ResponsiveContainer width="100%" height={400}>
             <BarChart
